@@ -10,5 +10,4 @@
 #include "service/ClassMapping.hpp"
 #include "service/Dumper.hpp"
 
-#include "wrapper/FieldWrapper.hpp"
 #include "wrapper/MethodWrapper.hpp"
