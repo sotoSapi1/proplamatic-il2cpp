@@ -95,7 +95,7 @@ void Example()
 // You can get pattern for both class and method from the dumper.
 FieldPattern moneyManager_pattern {"Int32", nullptr, "List`1", "String"};
 
-SignaturePattern AddMoney_pattern {"internal static", nullptr, {"String", nullptr}};
+SignaturePattern AddMoney_pattern {"internal static", nullptr, nullptr, {"String", nullptr}};
 IL2CPP::Wrapper::Method<void(IL2CPP::String* username, int amount)> AddMoney;
 
 void Example()  
@@ -115,7 +115,7 @@ void Example()
 		IL2CPP::ClassMapping::AddImageToScan(assemblyCShrap_image);
 		
 		IL2CPP::AddQueue(moneyManager_keyname, moneyManager_namespace, &moneyManager_pattern);
-		IL2CPP::ClassMapping::StartMapper();
+		IL2CPP::ClassMapping::StartMapping();
 		
 		mappingSucces = true;
 	}
