@@ -81,10 +81,10 @@ void Example()
 	// Getting static field
 	IL2CPP::FieldInfo* isControllerRunning_info = joeController_class->GetField("isControllerRunning");
 	
-	if(isJoe->IsStatic())
+	if(isControllerRunning_info->IsStatic())
 	{
-		bool isControllerRunning = isJoe_info->GetValue<bool>(nullptr);
-		std::cout << "is controller running" << isControllerRunning << std::endl;
+		bool isControllerRunning = isControllerRunning_info ->GetValue<bool>(nullptr);
+		std::cout << "is controller running: " << isControllerRunning << std::endl;
 	}
 }
 ```
