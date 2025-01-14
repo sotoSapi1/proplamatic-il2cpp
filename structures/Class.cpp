@@ -131,7 +131,7 @@ namespace IL2CPP
 			ForceInitializeClass();
 		}
 
-		for (size_t i = 0; i < FieldCount(); i++)
+		for (size_t i = 0; i < MethodCount(); i++)
 		{
 			MethodInfo* current = this->GetMethod(i);
 			if (current->GetName() == methodName && current->GetParametersCount())
@@ -149,15 +149,6 @@ namespace IL2CPP
 		return nullptr;
 	}
 
-	/**
-	 * @param methodName: The name of the method to find.
-	 * @param paramsCount: The number of parameters the method must have.
-	 *
-	 * @throw NoSuchMember: Thrown when no method with the specified name and parameter count is found.
-	 *
-	 * @returns A pointer of the first MethodInfo object with the same name as "methodName" argument and
-	 * with the same parameter count as "paramsCount" argument.
-	 */
 	MethodInfo* Class::GetMethod(const std::string& methodName, size_t paramsCount) const
 	{
 		if (this->HasMethods() && this->methods == nullptr)
@@ -165,7 +156,7 @@ namespace IL2CPP
 			ForceInitializeClass();
 		}
 
-		for (size_t i = 0; i < FieldCount(); i++)
+		for (size_t i = 0; i < MethodCount(); i++)
 		{
 			MethodInfo* current = this->GetMethod(i);
 			if (current->GetName() == methodName && current->GetParametersCount() == paramsCount)
