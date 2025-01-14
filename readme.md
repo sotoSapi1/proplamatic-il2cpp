@@ -54,7 +54,7 @@ void Example()
 	// Getting method
 	Foo = joeController_class->GetMethod("Foo");
 	
-	// You can getter methodInfo with index relative to class method table
+	// You can get methodInfo with index relative to class method table
 	IL2CPP::MethodInfo* GetJoe_info = joeController_class->GetMethod(0x7);
 	GetJoe = GetJoe_info;
 	
@@ -114,7 +114,7 @@ void Example()
 		// Cpecify which image will be scanned by the mapper.
 		IL2CPP::ClassMapping::AddImageToScan(assemblyCShrap_image);
 		
-		IL2CPP::AddQueue(moneyManager_keyname, moneyManager_namespace, moneyManager_pattern);
+		IL2CPP::AddQueue(moneyManager_keyname, moneyManager_namespace, &moneyManager_pattern);
 		IL2CPP::ClassMapping::StartMapper();
 		
 		mappingSucces = true;
