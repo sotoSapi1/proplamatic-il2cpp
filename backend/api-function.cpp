@@ -1,5 +1,4 @@
 #include <Windows.h>
-#include <Logger.hpp>
 
 #define DO_API_DEFINE
 #include "api-function.hpp"

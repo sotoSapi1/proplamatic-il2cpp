@@ -9,7 +9,7 @@ namespace IL2CPP
 			stacktrace = std::stacktrace::current();
 		}
 
-		explicit void ExceptionBase::InitializeException(const char* exceptionName, const std::string& message)
+		void ExceptionBase::InitializeException(const char* exceptionName, const std::string& message)
 		{
 			this->message = message;
 

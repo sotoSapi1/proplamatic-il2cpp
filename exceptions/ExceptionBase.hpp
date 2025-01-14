@@ -12,9 +12,9 @@ namespace IL2CPP
 			std::stacktrace stacktrace;
 			std::string message = "Unspecified error message.";
 
-			explicit ExceptionBase();
+			ExceptionBase();
 
-			void InitializeException(const char* exceptionName, const std::string& message));
+			void InitializeException(const char* exceptionName, const std::string& message);
 
 			public:
 			const std::stacktrace* GetStacktrace() const;

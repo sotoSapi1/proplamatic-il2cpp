@@ -1,5 +1,4 @@
 #include "IL2CPP.hpp"
-#include <Logger.hpp>
 
 namespace IL2CPP
 {
@@ -23,7 +22,7 @@ namespace IL2CPP
 
 		if (il2cppInitialized)
 		{
-			LOG_WARN("IL2CPP library is already initialized.");
+			std::printf("IL2CPP library is already initialized.\n");
 			return;
 		}
 
@@ -36,6 +35,6 @@ namespace IL2CPP
 
 		il2cppInitialized = true;
 
-		LOG_INFO("IL2CPP library have been initialized.");
+		std::printf("IL2CPP library have been initialized.\n");
 	}
 }

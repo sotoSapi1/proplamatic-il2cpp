@@ -1,10 +1,13 @@
+project(Unity)
+set(CMAKE_CXX_STANDARD 23)
+
 file(
 	GLOB_RECURSE 
 	GLOB
 	CONFIGURE_DEPENDS 
-	"${CMAKE_CURRENT_SOURCE_DIR}*.cpp" 
-	"${CMAKE_CURRENT_SOURCE_DIR}*.c"
+	"${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" 
+	"${CMAKE_CURRENT_SOURCE_DIR}/*.c"
 )
 
-add_library(Unity STATIC ${GLOB})
-target_include_directories(Unity PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
+add_library(${PROJECT_NAME} STATIC ${GLOB})
+target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
