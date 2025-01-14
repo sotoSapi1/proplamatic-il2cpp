@@ -134,7 +134,7 @@ namespace IL2CPP
 		for (size_t i = 0; i < MethodCount(); i++)
 		{
 			MethodInfo* current = this->GetMethod(i);
-			if (current->GetName() == methodName && current->GetParametersCount())
+			if (current->GetName() == methodName)
 			{
 				return current;
 			}
@@ -159,7 +159,7 @@ namespace IL2CPP
 		for (size_t i = 0; i < MethodCount(); i++)
 		{
 			MethodInfo* current = this->GetMethod(i);
-			if (current->GetName() == methodName && current->GetParametersCount() == paramsCount)
+			if (current->GetName() == methodName)
 			{
 				return current;
 			}
