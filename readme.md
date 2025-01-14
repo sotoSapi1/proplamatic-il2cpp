@@ -83,7 +83,7 @@ void Example()
 	
 	if(isControllerRunning_info->IsStatic())
 	{
-		bool isControllerRunning = isJoe_info->GetValue<bool>(nullptr);
+		bool isControllerRunning = isControllerRunning_info ->GetValue<bool>(nullptr);
 		std::cout << "is controller running: " << isControllerRunning << std::endl;
 	}
 }
