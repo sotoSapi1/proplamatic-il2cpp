@@ -1,6 +1,6 @@
 #pragma once
-#include <stdexcept>
 #include <format>
+#include "../Main.hpp"
 
 namespace IL2CPP
 {
@@ -9,7 +9,7 @@ namespace IL2CPP
 		class PatternScanFailed : public ExceptionBase
 		{
 			public:
-			PatternScanFailed() : ExceptionBase()
+			explicit PatternScanFailed() : ExceptionBase()
 			{
 				InitializeException(
 					IL2CPP_NAMEOF(PatternScanFailed),

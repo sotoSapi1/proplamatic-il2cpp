@@ -213,7 +213,7 @@ namespace IL2CPP
 		return nullptr;
 	}
 
-	MethodInfo* Class::GetMethodByPattern(const SignaturePattern& pattern) const
+	MethodInfo* Class::GetMethodByPattern(const SignaturePattern& pattern, int indexOffset) const
 	{
 		if (this->HasMethods() && this->methods == nullptr)
 		{
@@ -253,15 +253,17 @@ namespace IL2CPP
 
 				size_t successParamCounter = 0;
 
-				for (const char* typeName : pattern.parameterTypeList)
+				for(size_t j = 0; j < method->GetParametersCount(); j++)
 				{
+					const char* typeName = pattern.parameterTypeList[j];
+
 					if (typeName == nullptr)
 					{
 						successParamCounter++;
 						continue;
 					}
 
-					Class* paramClass = method->GetParameterType(i)->GetClass();
+					Class* paramClass = method->GetParameterType(j)->GetClass();
 
 					if (strcmp(typeName, "ENUM") == 0 && paramClass->IsEnum())
 					{
@@ -275,25 +277,26 @@ namespace IL2CPP
 
 				if (successParamCounter == method->GetParametersCount())
 				{
-					return method;
+					return this->GetMethod(i + indexOffset);
 				}
 			}
 			else
 			{
-				return method;
+				return this->GetMethod(i + indexOffset);
 			}
 		}
 
 		throw Exception::PatternScanFailed();
-
 		return nullptr;
 	}
 
-	MethodInfo* Class::GetMethodByPatternNullable(const SignaturePattern& pattern) const
+
+
+	MethodInfo* Class::GetMethodByPatternNullable(const SignaturePattern& pattern, int indexOffset) const
 	{
 		try
 		{
-			return GetMethodByPattern(pattern);
+			return GetMethodByPattern(pattern, indexOffset);
 		}
 		catch (const Exception::PatternScanFailed& err)
 		{

@@ -92,6 +92,11 @@ namespace IL2CPP
 
 	Type* MethodInfo::GetParameterType(size_t index) const
 	{
+		if (index >= GetParametersCount())
+		{
+			throw Exception::IndexOutOfBounds(index, GetParametersCount());
+		}
+
 		return (Type*)this->parameters[index];
 	}
 

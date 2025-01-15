@@ -43,9 +43,9 @@ namespace IL2CPP
 
 		MethodInfo* GetMethod(const std::string& methodName, const std::string& name, size_t sameMethodNameSkip = 0, int indexOffset = 0) const;
 
-		MethodInfo* GetMethodByPattern(const SignaturePattern& pattern) const;
+		MethodInfo* GetMethodByPattern(const SignaturePattern& pattern, int indexOffset = 0)  const;
 
-		MethodInfo* GetMethodByPatternNullable(const SignaturePattern& pattern) const;
+		MethodInfo* GetMethodByPatternNullable(const SignaturePattern& pattern, int indexOffset = 0) const;
 
 		bool CompareFieldPattern(const FieldPattern* fieldPattern) const;
 

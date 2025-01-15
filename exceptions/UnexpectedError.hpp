@@ -1,6 +1,6 @@
 #pragma once
-#include <stdexcept>
 #include <format>
+#include "../Main.hpp"
 
 namespace IL2CPP
 {
@@ -9,7 +9,7 @@ namespace IL2CPP
 		class UnexpectedError : public ExceptionBase
 		{
 			public:
-			UnexpectedError() : ExceptionBase()
+			explicit UnexpectedError() : ExceptionBase()
 			{
 				InitializeException(
 					IL2CPP_NAMEOF(UnexpectedError),

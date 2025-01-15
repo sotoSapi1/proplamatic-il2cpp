@@ -129,7 +129,7 @@ void Example()
 	{
 		IL2CPP::Class* moneyManager_class = IL2CPP::ClassMapper::GetClass(moneyManager_keyname); 
 	
-		AddMoney = moneyManager_class->GetMethodByPattern(&AddMoney_pattern);
+		AddMoney = moneyManager_class->GetMethodByPattern(AddMoney_pattern);
 		AddMoney(IL2CPP::String::Create("DiggerBeater47"), 999999);
 	}
 }

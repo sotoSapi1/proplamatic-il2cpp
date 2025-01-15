@@ -9,20 +9,16 @@ namespace IL2CPP
 {
 	namespace Dumper
 	{
-		bool is_basic_latin(int32_t x) noexcept
-		{
-			return x >= 0x0020 && x <= 0x007F;
-		}
-
 		bool is_obfuscated(std::string& str)
 		{
-			std::string out;
-			for (auto it = std::find_if(str.begin(), str.end(), is_basic_latin); it != str.end(); it++)
+			for (unsigned char ch : str)
 			{
-				out += std::string(it, it + 1);
+				if (static_cast<unsigned>(ch) > 127)
+				{
+					return true;
+				}
 			}
-
-			return out.empty();
+			return false;
 		}
 
 		std::string GenerateMethodPattern(IL2CPP::MethodInfo* method)

@@ -9,6 +9,7 @@
 #include "exceptions/NoSuchClass.hpp"
 #include "exceptions/NoSuchImage.hpp"
 #include "exceptions/NoSuchMember.hpp"
+#include "exceptions/NoSuchResult.hpp"
 #include "exceptions/IndexOutOfBound.hpp"
 #include "exceptions/NullArgument.hpp"
 #include "exceptions/PatternScanFailed.hpp"

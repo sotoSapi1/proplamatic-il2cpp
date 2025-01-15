@@ -211,12 +211,7 @@ namespace IL2CPP
 
 			if (it == INTERNAL::classMap.end() || it->second == nullptr)
 			{
-				throw std::runtime_error(
-					std::format(
-						"Couldn't find result with \"{0}\" key.", 
-						mapKeyname
-					)
-				);
+				throw Exception::NoSuchResult();
 				return nullptr;
 			}
 
