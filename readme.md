@@ -107,7 +107,7 @@ void Example()
 	std::string moneyManager_namespace = "Framework";		
 	std::string moneyManager_keyname = "MoneyManager";		
 	
-	bool mappingSucess = false;
+	bool mappingSuccess = false;
 
 	try
 	{
@@ -125,7 +125,7 @@ void Example()
 		std::cout << err.what() << std::endl;
 	}
 
-	if(mappingSucess)
+	if(mappingSuccess)
 	{
 		IL2CPP::Class* moneyManager_class = IL2CPP::ClassMapper::GetClass(moneyManager_keyname); 
 	
