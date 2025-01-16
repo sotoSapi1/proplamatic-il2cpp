@@ -1,7 +1,6 @@
 #pragma once
 #include <stdexcept>
 #include <stacktrace>
-#include "../Main.hpp"
 
 namespace IL2CPP
 {

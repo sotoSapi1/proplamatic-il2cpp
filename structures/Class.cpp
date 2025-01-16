@@ -183,7 +183,7 @@ namespace IL2CPP
 
 		uint32_t sameNameCounter = 0;
 
-		for (size_t i = 0; i < FieldCount(); i++)
+		for (size_t i = 0; i < MethodCount(); i++)
 		{
 			MethodInfo* current = this->GetMethod(i);
 			if (current->GetName() == methodName)
