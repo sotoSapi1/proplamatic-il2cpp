@@ -107,11 +107,11 @@ void Example()
 	std::string moneyManager_namespace = "Framework";		
 	std::string moneyManager_keyname = "MoneyManager";		
 	
-	bool mappingSucces = false;
+	bool mappingSucess = false;
 
 	try
 	{
-		// Cpecify which image will be scanned by the mapper.
+		// Specify which image will be scanned by the mapper.
 		IL2CPP::ClassMapping::AddImageToScan(assemblyCShrap_image);
 		
 		IL2CPP::AddQueue(moneyManager_keyname, moneyManager_namespace, &moneyManager_pattern);
@@ -125,7 +125,7 @@ void Example()
 		std::cout << err.what() << std::endl;
 	}
 
-	if(mappingSucces)
+	if(mappingSucess)
 	{
 		IL2CPP::Class* moneyManager_class = IL2CPP::ClassMapper::GetClass(moneyManager_keyname); 
 	
