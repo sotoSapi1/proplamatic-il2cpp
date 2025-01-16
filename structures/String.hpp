@@ -7,7 +7,7 @@ namespace IL2CPP
 	{
 		private:
 		int length;
-		uint16_t chars[32];
+		wchar_t chars[32];
 
 		public:
 		static String* Create(const char* str);

@@ -44,8 +44,8 @@ namespace IL2CPP
 		}
 
 		throw Exception::NoSuchClass(
-			fullname,
-			this->name
+			this->name,
+			fullname
 		);
 
 		return nullptr;
