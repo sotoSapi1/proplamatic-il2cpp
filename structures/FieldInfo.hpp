@@ -34,7 +34,7 @@ namespace IL2CPP
 				);
 			}
 
-			return (T)(uintptr_t)instance + this->GetOffset();
+			return *(T*)((uintptr_t)instance + this->GetOffset());
 		}
 
 		template<typename T>
@@ -53,7 +53,7 @@ namespace IL2CPP
 				);
 			}
 
-			*((T*)(uintptr_t)instance + this->GetOffset()) = value;
+			*(T*)((uintptr_t)instance + this->GetOffset()); = value;
 		}
 	};
 }
