@@ -76,7 +76,7 @@ namespace IL2CPP
 
 			explicit operator bool() const 
 			{
-				return this->ptr == nullptr;
+				return this->ptr != nullptr;
 			}
 		};
 	}
