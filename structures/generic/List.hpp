@@ -30,7 +30,7 @@ namespace IL2CPP
 				);
 			}
 			
-			return items->vector[index];
+			return items->Get(index);
 		}
 
 		void Set(int index, T value)
@@ -43,12 +43,12 @@ namespace IL2CPP
 				);
 			}
 			
-			items->vector[index] = value;
+			items->Set(index, value);
 		}
 
 		void ForEach(std::function<void(T)> func)
 		{
-			for (int i = 0; i < size; ++i)
+			for (int i = 0; i < GetSize(); ++i)
 			{
 				func(items->vector[i]);
 			}
@@ -56,7 +56,7 @@ namespace IL2CPP
 
 		void ForEach(std::function<void(T, int)> func)
 		{
-			for (int i = 0; i < size; ++i)
+			for (int i = 0; i < GetSize(); ++i)
 			{
 				func(items->m_Ivectortems[i], i);
 			}
