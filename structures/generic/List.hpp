@@ -10,18 +10,39 @@ namespace IL2CPP
 	{
 		private:
 		Array<T>* items;
-		int size;
-		int version;
+		int32_t size;
+		int32_t version;
 		IMPORT::Il2CppObject* syncRoot;
 
-		public:
-		T Get(int index)
+		public:	
+		int32_t GetSize()
 		{
+			return this->size;
+		}
+
+		T Get(int index)
+		{	
+			if(index >= GetSize())
+			{
+				throw Exception::IndexOutOfBounds(
+					index,
+					GetSize()
+				);
+			}
+			
 			return items->vector[index];
 		}
 
-		void Set(T value, int index)
+		void Set(int index, T value)
 		{
+			if(index >= GetSize())
+			{
+				throw Exception::IndexOutOfBounds(
+					index,
+					GetSize()
+				);
+			}
+			
 			items->vector[index] = value;
 		}
 
