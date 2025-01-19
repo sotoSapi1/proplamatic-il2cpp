@@ -53,7 +53,7 @@ namespace IL2CPP
 				);
 			}
 
-			*(T*)((uintptr_t)instance + this->GetOffset()); = value;
+			*(T*)((uintptr_t)instance + this->GetOffset()) = value;
 		}
 	};
 }
