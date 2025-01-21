@@ -54,7 +54,7 @@ namespace IL2CPP
 
 		Array* Clone()
 		{
-			static auto func = (Object* (*)(Object* arr)) DefaultTypeClass::Array->GetMethod(0xf)->GetPointer();
+			static auto func = (Array<T>* (*)(Array<T>* arr)) DefaultTypeClass::Array->GetMethod(0xf)->GetPointer();
 			return func(this);
 		}
 
