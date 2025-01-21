@@ -27,6 +27,11 @@ namespace IL2CPP
 			);
 		}
 
+		T* GetVectorPointer()
+		{
+			return vector;
+		}
+
 		T Get(size_t index)
 		{
 			if (index >= this->max_length)
